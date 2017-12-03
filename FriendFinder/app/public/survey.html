@@ -10,24 +10,182 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <!-- header -->
     <div class="page-header">
         <h1>Survey Questions</h1>
     </div>     
+    <!-- main survey content -->
     <div class='container'>
         <div class='row col-m-12'>
             <form>
+                <!-- name and photo -->
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <label for="userName">Name</label>
+                    <input id="name" class="form-control" placeholder="Name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="userPhoto">Link to photo</label>
+                    <input id="image-link" class="form-control" placeholder="Link to photo">
                 </div>
                 <hr>
-                <!-- Split button -->
+                <!-- questions w/ dropdown answer options -->
+                <label for="userPhoto">Question 1: </label>
+                <br>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-default leftdropdown">Q1</button>
+                    <button type="button" class="btn btn-default leftdropdown" id='q1Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 2: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q2Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 3: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q3Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 4: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q4Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 5: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q5Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 6: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q6Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 7: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q7Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 8: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q8Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 9: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q9Answer'>Select</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+                <br>
+                <label for="userPhoto">Question 10: </label>
+                <br>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default leftdropdown" id='q10Answer'>Select</button>
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="caret"></span>
                     <span class="sr-only">Toggle Dropdown</span>
@@ -41,7 +199,10 @@
                     </ul>
                 </div>
                 <hr>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <!-- submit button -->
+                <button type="submit" class="btn btn-default" id='submit-btn'>Submit</button>
+                <hr>
+                <a href="#">API Data</a> | <a href="#">GitHub Repo</a>                
             </form>
         </div>                            
     </div>
@@ -52,5 +213,14 @@ $(".dropdown-menu li a").click(function(){
   var answer = $(this).text();
   $(this).parents('.btn-group').find('.leftdropdown').text(answer);
 });
+// create conditional statements to check if user answered each question
+$('#submit-btn').click(function () {
+    event.preventDefault();
+    console.log($('#name').val());
+    console.log($('#image-link').val());
+    console.log($('#q1Answer').text());
+    // display mod with user's best match
+    // then return user to home page
+})
 </script>
 </html>
