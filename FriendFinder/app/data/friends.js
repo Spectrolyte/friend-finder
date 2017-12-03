@@ -1,17 +1,9 @@
-// example data
-// {
-//     "name":"Ahmed",
-//     "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-//     "scores":[
-//         5,
-//         1,
-//         4,
-//         4,
-//         5,
-//         1,
-//         2,
-//         5,
-//         4,
-//         1
-//       ]
-//   }
+var friends = [
+    {
+        name: 'Bob',
+        photo: 'https://timedotcom.files.wordpress.com/2014/08/t100_tv_spongebob_free1.jpg?quality=85&w=1024',
+        scores: [1,1,1,1,1,1,1,1,1,1]
+    }
+]
+
+module.exports = friends;
