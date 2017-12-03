@@ -4,11 +4,20 @@
 
 var express = require('express')
 var router = express.Router();
-var path = require('path');
 var friends = require('./../data/friends.js');
 
 router.get('/api/friends', function (req, res) {
     res.json(friends);
+    console.log(router);
 });
+
+router.post('/api/friends', function (req, res) {
+    var newFriend = req.body;
+    for (var i = 0; i < newFriend.scores.length; i++) {
+        newFriend.scores[i] = parseInt(newFriend.scores[i]);
+    }
+    friends.push(newFriend);
+    res.end();
+})
 
 module.exports = router;

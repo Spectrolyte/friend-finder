@@ -208,19 +208,33 @@
     </div>
 </body>
 <script type="text/javascript">
-$('.dropdown-toggle').dropdown();
-$(".dropdown-menu li a").click(function(){
-  var answer = $(this).text();
-  $(this).parents('.btn-group').find('.leftdropdown').text(answer);
-});
-// create conditional statements to check if user answered each question
-$('#submit-btn').click(function () {
-    event.preventDefault();
-    console.log($('#name').val());
-    console.log($('#image-link').val());
-    console.log($('#q1Answer').text());
-    // display mod with user's best match
-    // then return user to home page
-})
+    // adds dropdown functionality
+    $('.dropdown-toggle').dropdown();
+    // when item from dropdown is selected, change the text of the button
+    $(".dropdown-menu li a").click(function(){
+    var answer = $(this).text();
+    $(this).parents('.btn-group').find('.leftdropdown').text(answer);
+    });
+    // create conditional statements to check if user answered each question
+    $('#submit-btn').click(function () {
+        event.preventDefault();
+        var newFriend = {
+            name: 'Goober',
+            photo: 'https://timedotcom.files.wordpress.com/2015/02/imsis270-064.jpg',
+            scores: [1,1,1,1,1,1,1,1,1,1]
+        }
+        // post request to update friends list
+        $.post('/api/friends', newFriend, function (data) {
+            console.log('data added');
+            console.log(data);
+        })
+
+        // console.log($('#name').val());
+        // console.log($('#image-link').val());
+        // console.log($('#q1Answer').text());
+
+        // display mod with user's best match
+        // then return user to home page
+    })
 </script>
 </html>
