@@ -13,9 +13,11 @@ router.get('/api/friends', function (req, res) {
 
 router.post('/api/friends', function (req, res) {
     var newFriend = req.body;
+    // convert scores to integers
     for (var i = 0; i < newFriend.scores.length; i++) {
         newFriend.scores[i] = parseInt(newFriend.scores[i]);
     }
+    // add new data to friends list
     friends.push(newFriend);
     res.end();
 })
