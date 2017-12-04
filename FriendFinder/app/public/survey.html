@@ -247,7 +247,7 @@
             // post request to update friends list
             $.post('/api/friends', newFriend, function (data) {
                 console.log('data added');
-                console.log(data);
+                console.log('data: ' + JSON.stringify(data));
                 // display mod with user's best match
                 // then return user to home page
             })

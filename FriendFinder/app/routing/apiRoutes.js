@@ -17,20 +17,26 @@ router.post('/api/friends', function (req, res) {
     for (var i = 0; i < newFriend.scores.length; i++) {
         newFriend.scores[i] = parseInt(newFriend.scores[i]);
     }
-    // find best match
-    calculateDiff([4,2,1,1,1,1,1,1,1,1], friends);
-    findMatch([34,56,23,80]);
-    // add new data to friends list
+    // keep the differences at the same index as the friend data in friends list
+    var unsortedDiffs = calculateDiff([2,2,2,2,2,2,2,2,2,2]);
+    // returns least value in sorted diffs
+    var matchVal = findMatch(unsortedDiffs);
+    // index of matchedVal in unsorted friends list
+    var matchIndex = unsortedDiffs.indexOf(matchVal);
+    // match data
+    var match = friends[matchIndex];
+    // add new data to friends list -- done last to avoid user matching with his/herself
     friends.push(newFriend);
-    res.end();
+    // sends the match's data to client
+    res.send(match);
 })
 
-function calculateDiff (userScores, friendsData) {
-    // takes in two arrays -- current user's scores and the current friends list
+function calculateDiff (userScores) {
+    // takes an array -- current user's scores
     var scoreList = [];
     // iterate through friends list, capture their scores and put into an array
-    for (var i=0; i < friendsData.length; i ++) {
-        scoreList.push(friendsData[i].scores);
+    for (var i=0; i < friends.length; i ++) {
+        scoreList.push(friends[i].scores);
     }
 
     // difference scores stores here
@@ -51,18 +57,21 @@ function calculateDiff (userScores, friendsData) {
         differences.push(totalDiff);
     }
     
-
-    console.log('diffs: ' + differences);
+    return differences;
 }
 
 // finds friend with most compatibility -- least difference in score
 function findMatch (differences) {
-    // takes in an array populated with the differences between the current user and potential matches
-    // find the least value and return that person's info
-    differences.sort(function compareNumbers(a, b) {
-        return a - b;
-    })
-    
+    // takes in an array of differences
+    // find least value in array and return that value
+    var leastDiff;
+    for (var i=0; i < differences.length; i++) {
+        // if there's no initial value or the current least value is greater than the current value, reassign.
+        if (leastDiff > differences[i] || (!leastDiff && i===0)) {
+            leastDiff = differences[i];
+        }
+    }
+    return leastDiff;
 }
 
 module.exports = router;
