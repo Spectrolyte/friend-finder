@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FriendFinder Survey</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' type="text/css" href='styles.css'>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -30,10 +31,13 @@
     </div>
     <!-- header -->
     <div class="page-header">
-        <h1>Survey Questions</h1>
+        <h1 class="text-center">Survey Questions</h1>
     </div>     
     <!-- main survey content -->
     <div class='container'>
+        <div class='row col-m-12'>
+            <h3>Answer each prompt below on a scale from 1 to 5, with 1 being strongly disagree and 5 strongly agree.</h3>
+        </div>
         <div class='row col-m-12'>
             <form>
                 <!-- name and photo -->
@@ -47,7 +51,7 @@
                 </div>
                 <hr>
                 <!-- questions w/ dropdown answer options -->
-                <label for="userPhoto">Question 1: </label>
+                <label for="userPhoto">You find it difficult to introduce yourself to other people.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q1Answer'>Select</button>
@@ -64,7 +68,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 2: </label>
+                <label for="userPhoto">You often get so lost in thoughts that you ignore or forget your surroundings.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q2Answer'>Select</button>
@@ -81,7 +85,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 3: </label>
+                <label for="userPhoto">You try to respond to your e-mails as soon as possible and cannot stand a messy.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q3Answer'>Select</button>
@@ -98,7 +102,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 4: </label>
+                <label for="userPhoto">You find it easy to stay relaxed even when there is some pressure.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q4Answer'>Select</button>
@@ -115,7 +119,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 5: </label>
+                <label for="userPhoto">You do not usually initiate conversations.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q5Answer'>Select</button>
@@ -132,7 +136,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 6: </label>
+                <label for="userPhoto">You rarely do something just out of sheer curiosity.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q6Answer'>Select</button>
@@ -149,7 +153,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 7: </label>
+                <label for="userPhoto">You feel superior to other people.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q7Answer'>Select</button>
@@ -166,7 +170,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 8: </label>
+                <label for="userPhoto">Being organized is more important to you than being adaptable.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q8Answer'>Select</button>
@@ -183,7 +187,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 9: </label>
+                <label for="userPhoto">You are usually highly motivated and energetic.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q9Answer'>Select</button>
@@ -200,7 +204,7 @@
                     </ul>
                 </div>
                 <br>
-                <label for="userPhoto">Question 10: </label>
+                <label for="userPhoto">Winning a debate matters less to you than making sure no one gets upset.</label>
                 <br>
                 <div class="btn-group">
                     <button type="button" class="btn btn-default leftdropdown" id='q10Answer'>Select</button>
@@ -220,7 +224,9 @@
                 <!-- submit button -->
                 <button type="submit" class="btn btn-default" id='submit-btn' data-toggle="modal" data-target="#myModal">Submit</button>
                 <hr>
-                <a href="/api/friends">API Data</a> | <a href="#">GitHub Repo</a>         
+                <a href="/api/friends">API Data</a> | <a href="https://github.com/Spectrolyte/friend-finder">GitHub Repo</a>
+                <br>
+                <p>These prompts were taken from the <a href="https://www.16personalities.com/">16 Personalities test</a>. Check it out!</p>
             </form>
         </div>                            
     </div>
