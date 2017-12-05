@@ -18,7 +18,7 @@ router.post('/api/friends', function (req, res) {
         newFriend.scores[i] = parseInt(newFriend.scores[i]);
     }
     // keep the differences at the same index as the friend data in friends list
-    var unsortedDiffs = calculateDiff([2,2,2,2,2,2,2,2,2,2]);
+    var unsortedDiffs = calculateDiff(newFriend.scores);
     // returns least value in sorted diffs
     var matchVal = findMatch(unsortedDiffs);
     // index of matchedVal in unsorted friends list

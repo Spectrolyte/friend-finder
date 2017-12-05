@@ -10,6 +10,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+     <!-- modal -->
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">You're most compatible with...</h4>
+            </div>
+            <div class="modal-body">
+                <h3><span id='friend-name'></span></h3>
+                <img id='friend-photo'>
+            </div>
+            <div class="modal-footer">
+                <a href="/" target='self'><button type="button" class="btn btn-default">Return Home</button></a>
+            </div>
+            </div>
+        </div>
+    </div>
     <!-- header -->
     <div class="page-header">
         <h1>Survey Questions</h1>
@@ -200,9 +218,9 @@
                 </div>
                 <hr>
                 <!-- submit button -->
-                <button type="submit" class="btn btn-default" id='submit-btn'>Submit</button>
+                <button type="submit" class="btn btn-default" id='submit-btn' data-toggle="modal" data-target="#myModal">Submit</button>
                 <hr>
-                <a href="/api/friends">API Data</a> | <a href="#">GitHub Repo</a>                
+                <a href="/api/friends">API Data</a> | <a href="#">GitHub Repo</a>         
             </form>
         </div>                            
     </div>
@@ -216,9 +234,11 @@
         var answer = $(this).text();
         $(this).parents('.btn-group').find('.leftdropdown').text(answer);
     });
+
     // create conditional statements to check if user answered each question
     $('#submit-btn').click(function () {
         event.preventDefault();
+        
         // capture user input
         var name = $('#name').val().trim();
         var photo = $('#image-link').val().trim();
@@ -248,7 +268,12 @@
             $.post('/api/friends', newFriend, function (data) {
                 console.log('data added');
                 console.log('data: ' + JSON.stringify(data));
-                // display mod with user's best match
+                // display modal with user's best match
+                $('#friend-name').text(data.name);
+                $('#friend-photo').attr('src', data.photo);
+                $('#myModal').on('shown.bs.modal', function () {
+                    $('#myInput').focus()
+                });
                 // then return user to home page
             })
         }
